@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+
+       *{
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+       }
+
+       body{
+
+        background-color: rgb(12, 12, 58);
+        font-family: sans-serif;
+       
+       }
+
+       .section-form{
+          height: 550px;
+          background-color: crimson;
+          width: 700px;
+          margin: 0 auto;
+          display: flex;
+          justify-content: center; 
+          margin-top: 5%;
+          border-radius: 10px;
+                  
+       }
+
+       .form-envio-caja{
+         margin-top: 20px;
+         line-height: 45px;
+       }
+
+       .form-envio-caja .title{
+         text-align: center;
+         color: aliceblue;
+         font-weight: bold;
+         
+       }
+
+       .form-envio-caja input{
+          border-radius: 10px;
+          border: none;
+          padding: 5px 5px;
+          outline: none;
+          text-indent: 20px;
+       }
+
+       .form-envio-caja label{
+         color: aliceblue;
+         font-weight: bold;
+       }
+
+       .form-envio-caja p{
+         color: white;
+       }
+
+       #diminuta {
+         background-color: blue;
+       }
+
+       #selectCajas{
+         padding: 5px 5px;
+         border-radius: 10px;
+         outline: none;
+       }
+
+       #caja-comentarios{
+         height: 50px;
+         outline: none;
+       }
+
+       .boton{
+         border-radius: 10px;
+         border: none;
+         padding: 5px 5px;
+         font-weight: 700;
+       }
+
+
+       #input-resultado{
+         width: 250px;
+         margin-left: 20px;
+         
+       }
+
+
+    </style> 
+
+</head>
+<body>   
+      
+     
+<section class="section-form">
+    <form action="" class="form-envio-caja">
+       <h2 class="title">Formulario de envio</h2> 
+         
+       <div class="input-cliente" style="display: grid;grid-template-columns: 1fr;width: 200px;">
+        <label for="input">Nombre del cliente: </label>
+        <input type="text" id="input-nombre">
+       </div> 
+        
+        <label for="">Material de la caja: </label>
+        <select name="selector de cajas" id="selectCajas">
+            <option value="madera">madera</option>
+            <option value="plastico">Plastico</option>
+            <option value="carton">carton</option>     
+        </select>
+     
+ 
+        <p>Seleccione una de las dimensiones de la caja</p>
+        <input type="radio" id="input-dimension" name="dimension" value="Diminuta">
+        <label for="html">Diminuta</label><br>
+        <input type="radio" id="input-dimension" name="dimension" value="Mediano">
+        <label for="css">Mediano</label><br>
+        <input type="radio" id="input-dimension" name="dimension" value="Grande">
+        <label for="javascript">Grande</label>
+    
+      
+        <p>Comentarios</p>
+        <textarea id="caja-comentarios" cols="30" rows="10"></textarea>
+        <br>
+        <button onclick="enviarCaja()"  type="button" class="boton">Enviar</button>
+        <input type="text" id="input-resultado">
+   
+    </form> 
+
+</section>      
+  
+
+<script>
+    
+    function enviarCaja(){
+
+      
+        let nombre = document.getElementById("input-nombre").value;
+        
+        let select = document.getElementById("selectCajas").value;
+
+        let dimensionCaja = document.querySelectorAll('input[name="input-dimension"]:checked').value; 
+
+        let comentario = document.getElementById("caja-comentarios").value;
+      
+        document.getElementById("input-resultado").value = nombre + ' ha pedido una caja de: '
+         + select  + ' con unas dimensiones:  ' + dimensionCaja + '. ' + comentario;
+
+    }  
+
+
+</script>
+
+
+
+
+</body>
+</html>

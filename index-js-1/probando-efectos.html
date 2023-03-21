@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        h1 {
+  text-align: center;
+}
+.capas {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
+  height:510px;
+}
+
+.capas img {
+  position: absolute;  
+  max-width: 100%;
+  transition: all ease 1250ms;
+  transform-style: preserve-3d;
+  border-radius: 30px;
+}
+.capas:hover .capa0 {
+  transform: perspective(2000px) rotateX(0deg) rotateY(30deg) rotateZ(0deg) translateX(30px) translateY(50px) translateZ(0px);
+}
+.capas:hover .capa1 {
+  transform: perspective(2000px) rotateX(0deg) rotateY(30deg) rotateZ(0deg) translateX(-30px) translateY(0px) translateZ(40px);
+  opacity: .6;
+}
+.capas:hover .capa2 {
+  transform: perspective(2000px) rotateX(0deg) rotateY(30deg) rotateZ(0deg) translateX(-30px) translateY(0px) translateZ(80px);
+}
+.capas:hover .capa3 {
+  transform: perspective(2000px) rotateX(0deg) rotateY(30deg) rotateZ(0deg) translateX(-30px) translateY(0px) translateZ(120px);
+}
+.capas:hover .capa4 {
+  transform: perspective(2000px) rotateX(0deg) rotateY(30deg) rotateZ(0deg) translateX(-30px) translateY(0px) translateZ(160px);
+}
+.capas:hover .capa5 {
+  transform: perspective(2000px) rotateX(0deg) rotateY(30deg) rotateZ(0deg) translateX(-30px) translateY(0px) translateZ(200px);
+}
+.tutorial{
+  text-align: center;
+}
+    </style>
+
+</head>
+<body>
+
+    <h1>Efecto :hover 3D de capas</h1>
+<div class="capas">
+  <img src="https://www.jesustovar.es/wp-content/themes/veteasabertu/images/web-capa-0.png" class="capa0">
+  <img src="https://www.jesustovar.es/wp-content/themes/veteasabertu/images/web-capa-1.png" class="capa1">
+  <img src="https://www.jesustovar.es/wp-content/themes/veteasabertu/images/web-capa-2.png" class="capa2">
+  <img src="https://www.jesustovar.es/wp-content/themes/veteasabertu/images/web-capa-3.png" class="capa3">
+  <img src="https://www.jesustovar.es/wp-content/themes/veteasabertu/images/web-capa-4.png" class="capa4">
+  <img src="https://www.jesustovar.es/wp-content/themes/veteasabertu/images/web-capa-5.png" class="capa5">
+</div>
+
+
+    
+</body>
+</html>

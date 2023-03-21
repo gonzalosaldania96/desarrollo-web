@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversion de moneda</title>
+
+    <style>  
+       
+       *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+
+            background: linear-gradient(to right, red, blue);
+        }
+
+        .form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: white;
+            width: 40%;
+            margin: 0 auto;
+            margin-top: 50px;
+            border-radius: 30px;
+            height: 600px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+
+        .form .body-form{
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            row-gap: 3.5em;
+            align-items: center;
+            font-family: sans-serif;
+            font-weight: 500;
+            
+        }
+
+        .body-form .title{
+            color: gray;
+        }
+
+        .body-form input{
+           width: 200px;
+           border-radius: 10px;
+           height: 40px;
+           margin-left: 20px;
+           border: none;
+           text-indent: 20px;
+           border-bottom: 1px solid red;
+          
+        }
+
+        .body-form button{
+            border-radius: 20px;
+            background: linear-gradient(to right, blue, rgb(133, 133, 208));
+            height: 40px;
+            width: 200px;
+            border: none;
+            color: white;
+            font-weight: bold;  
+        }
+
+        .body-form > label{
+            color: gray;
+        }
+        
+        .body-form input:focus{
+            
+            outline: none;
+            border-color: blue;
+        }
+
+        .line{
+
+            top: 350px; 
+            position: relative; 
+            width: 590px; 
+            margin: 0 auto; 
+            border: 2px solid red;
+        }
+
+    
+    </style>
+
+  
+</head>
+<body>
+
+<hr class="line">
+<div class="form">
+    
+    <form action="" class="form-conversion"> 
+        
+    <div class="body-form">
+          
+        <h2 class="title">Formulario de conversion</h2>
+       
+        <label for="">ingrese la cantidad de pesos<input class="input-form"  id="pesos" type="text" placeholder="ingrese el valor en pesos: "></label>
+       
+        <label for="">ingrese la cantidad de dolares<input class="input-form" id="dolares" type="text" placeholder="ingrese el valor en dolares: "></label>
+        
+        <label for="">La conversion en dolares es: <input class="input-form" id="dolaresRes"  type="text" disabled></label>
+
+        <label for="">La conversion en pesos es: <input class="input-form" id="pesosRes" type="text" disabled></label>
+
+   
+        <button type="button" onclick="convertir()" id="button-conversion">Convertir</button>
+    
+    </div>      
+     
+    </form>
+ 
+</div> 
+
+  
+
+<script>
+
+   function convertir(){
+     
+     const precioDolar = 300;
+
+     let cont = 0;
+     
+     let pesos = document.getElementById("pesos").value;
+ 
+     let dolares = document.getElementById("dolares").value;
+
+     let resultadoDolares = pesos/precioDolar;
+
+     let resultadoPesos =  dolares * precioDolar; 
+     
+     if(isNaN(dolares) || dolares<0 || dolares==''){
+        
+        document.getElementById("pesosRes").value = null;
+
+     }else{
+     
+        document.getElementById("pesosRes").value = '$' + resultadoPesos.toFixed(2);
+     } 
+
+     if(isNaN(pesos) || pesos<0 || pesos==''){
+
+ 
+       document.getElementById("dolaresRes").value = null;
+        
+     }else{
+       
+        document.getElementById("dolaresRes").value = '$' + resultadoDolares.toFixed(2); 
+     }
+
+}
+      
+   
+   
+</script>
+    
+</body>
+</html>

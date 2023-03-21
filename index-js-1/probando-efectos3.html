@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        
+     
+
+        body{
+            
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: rgb(30, 121, 177);
+            background: url(Captura\ de\ pantalla\ 2022-11-03\ 145740.png)no-repeat;
+            background-size: cover;
+            overflow-x: hidden;
+  
+        }
+
+        .header{
+
+            height: 100px;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: darkcyan;
+            opacity: 0.6;
+            transition: 2s;
+        }
+
+       nav ul{
+
+         display: flex;
+         gap: 2em;
+         margin-right: 40px;
+         list-style: none;
+       
+        } 
+
+       nav ul li a{
+
+        text-decoration: none;
+        color: white;
+      }
+
+
+    .header::after{
+       
+       content: "";
+       position: absolute;
+       bottom: 0;
+       display: none;
+       height: 50%;
+       width: 100%;
+       background-color: red;
+  
+   }  
+
+    .header:hover{
+        
+        height: 100%;
+        opacity: 0.8;
+        color:aliceblue;
+        font-weight: bold;
+        background-color: black;
+        transform-style: preserve-3d;
+        transition: 0.9s;
+              
+    }
+
+    .header:hover::after{
+        display: block;
+        background-color: white;
+        opacity: 0.9;
+        filter: blur(50px); 
+        transition: all ease 0.8s;
+    }
+
+   
+
+
+    </style>
+</head>
+<body>
+
+
+    <header class="header">
+        <nav>
+            <ul>
+                <li>
+                    <a href="">Link1</a>
+                </li>
+
+                <li><a href="">Link2</a></li>
+                <li><a href="">Link3</a></li>
+                <li><a href="">Link4</a></li>
+            </ul>
+        </nav>
+    </header>
+
+</body>
+</html>

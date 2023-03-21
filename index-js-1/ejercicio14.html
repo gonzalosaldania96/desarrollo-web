@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de acierto</title>
+
+ 
+   <style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body{
+        background-color: darkcyan;
+        font-family: serif;
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+    .contenedor-de-formulario{
+        height: 350px;
+        width: 350px;
+        background-color: lightslategray;
+        margin: 0 auto;
+        border-radius: 10px;
+        margin-top: 10%;
+        padding: 20px 20px;
+    }
+
+    .contenedor-de-formulario h2{
+        color: aliceblue;
+        text-align: center;
+    }
+    
+    .form-juego{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2em;
+        margin-top: 50px;        
+    }
+
+    .form-juego input{
+        width: 100%;
+        margin-top: 20px;
+        border-radius: 10px;
+        border: none;
+        outline: none;
+        text-align: center;
+        height: 25px;
+        display: flex;
+        
+    }
+
+    .form-juego label{
+        text-align: center;
+    }
+
+
+    .boton{
+        height: 30px;
+        width: 100px;
+        border-radius: 15px;
+        border: none;
+    }
+
+    #intentos{
+        height: 350px;
+        width: 250px;
+        background-color: darkblue;
+        position: relative;
+        bottom: 350px;
+        left: 320px;
+        z-index: -1;
+        color: aliceblue;
+        font-size: 30px;
+        text-align: center;
+    }
+
+
+   </style>
+
+
+
+</head>
+<body>
+
+   
+    <section class="contenedor-de-formulario">
+        <h2 class="title">Juego de acierto</h2>
+        <form class="form-juego" action="">
+            
+           
+            <label for="input-numero">Ingrese un numero: <input type="password" id="input-numero"> </label>
+            <label for="input-resultado">El resultado es: <input type="text" id="input-resultado"></label>
+            <button onclick="juegoNumero()" type="button" class="boton">Resultado</button>
+           
+        </form>
+   
+    </section>
+    
+
+    <div id="intentos">
+        
+        <p> La cantidad de intentos es: </p>
+        
+    </div>
+
+
+<script>
+
+        let numeroAcierto = Math.trunc(Math.random() *(5-1)+1);
+        let contador = 0;
+        let intentos = 3;
+        let numero = document.getElementById("input-numero").value;
+
+        let divIntentos =  document.getElementById("intentos");
+
+        divIntentos.innerHTML = "La cantidad de intentos restantes es: " + "<br><br>" + intentos;
+  
+    function juegoNumero(){
+       
+        numero = document.getElementById("input-numero").value;
+        if(numero == numeroAcierto){
+         
+            document.getElementById("input-resultado").value = 'Ganaste!';
+       
+        }else if(numero!= numeroAcierto && contador<2){
+           
+            document.getElementById("input-resultado").value = 'Fallaste!';
+            contador++;
+            intentos--;
+            divIntentos.innerHTML = "La cantidad de intentos restantes es: " + "<br><br>" + intentos;
+        
+        }else if(numero!=numeroAcierto && contador==2){
+       
+            document.getElementById("input-resultado").value = 'Perdiste!';
+        }
+    }
+    
+   
+          
+
+    
+
+</script>
+
+
+
+    
+</body>
+</html>

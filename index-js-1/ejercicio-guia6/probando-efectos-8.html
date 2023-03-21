@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+} 
+
+img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.sidenav {
+  height: 0;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  display: flex;
+  gap: 2em;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+  background: grey;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: .5s;
+  padding: 16px;
+  margin-top: 300px;
+  height: 500px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+<body>
+
+    <img src="/Captura de pantalla 2022-11-03 145740.png" alt="">
+
+<div onmouseenter="openNav()" onmouseleave="closeNav()" id="mySidenav" class="sidenav">
+  
+  <div>
+  <a href="#">About</a>
+  <a href="#">Services</a>
+  <a href="#">Clients</a>
+  <a href="#">Contact</a>
+  </div>
+  
+  <div>
+  <a href="#">About</a>
+  <a href="#">Services</a>
+  <a href="#">Clients</a>
+  <a href="#">Contact</a>
+  </div>
+  <div>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Clients</a>
+    <a href="#">Contact</a>
+    </div>
+    
+    <div>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Clients</a>
+    <a href="#">Contact</a>
+    </div>
+</div>
+
+<div id="main">
+  <h2>Sidenav Push Example</h2>
+  <p>Click on the element below to open the side navigation menu, and push this content to the right. Notice that we add a black see-through background-color to body when the sidenav is opened.</p>
+
+</div>
+
+<script>
+function openNav() {
+  
+  document.getElementById("mySidenav").style.height = "50%";
+  document.querySelector("img").style.filter = "blur(40px)";
+  document.getElementById("main").style.filter = "blur(5px)";
+  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+ 
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.height = "0";
+  document.getElementById("main").style.marginLeft= "0";
+  document.getElementById("main").style.filter= "none";
+  document.querySelector("img").style.filter = "none";
+  document.querySelector("img").style.transition= "0.8s";
+  document.body.style.backgroundColor = "white";
+}
+</script>
+   
+</body>
+</html>  

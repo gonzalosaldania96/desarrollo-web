@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversion de temperatura</title>
+
+   <style>
+    *{
+        margin: 0;
+        padding: 0;   
+        box-sizing: border-box;
+    }
+
+    body{
+
+        background-color: rgb(14, 14, 82);
+        background: url(/medidas_de_temperatura.jpg) no-repeat;
+        background-size: 100%;
+        box-shadow: 20px 20px 56px -22px gray;
+    }
+
+    .section-form{
+
+        height: 410px;
+        width: 600px;
+        background: linear-gradient(to right, darkblue, skyblue);
+        margin: 0 auto;
+        margin-top: 115px;
+        border-radius: 25px;
+        overflow: hidden;
+        font-family: sans-serif;
+        font-weight: 700;
+        color: azure;
+        opacity: 0.93;
+        
+    }
+
+    .form-conversion{
+
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        row-gap: 4em;
+        margin-top: 30px;
+   
+    }
+
+
+    .form-conversion input{
+
+        border-radius: 20px;
+        border: none;
+        height: 30px;
+        margin-left: 20px;
+        outline: 0;
+        text-indent: 20px;
+        
+    }
+
+    .boton{
+        
+        width: 200px;
+        height: 40px;
+        border-radius: 10px;
+        border: none;
+        font-weight: bold;
+
+    }
+
+    .boton:active{
+        cursor: pointer;
+    }
+
+    input:focus{
+
+        border: 2px solid red;
+        
+    }
+
+
+   </style>
+
+</head>
+<body>
+
+
+    <section class="section-form">
+       
+        <form action="" class="form-conversion">
+            <h2 class="title">Formulario para convertir de °celcius a °F</h2>
+           <div class="container-form">
+            <label for="" class="label-form">ingrese la temperatura: </label>
+            <input type="text" id="celcius" >
+           </div>
+          
+           <div class="container-form">
+            <label for="" class="label-form">La temperatura en °F es: </label>
+            <input type="text" id="fahrenheit" disabled>
+           </div>
+
+            <button onclick="convertirTemperatura()" type="button" class="boton">Convertir</button>
+
+        </form>
+
+    </section>
+    
+    <script> 
+
+        function convertirTemperatura(){
+
+            let GradosCelcius = document.getElementById("celcius").value;  
+            
+            let resultado =  Math.trunc((GradosCelcius * 9/5) + 32);
+
+            if(isNaN(GradosCelcius) || GradosCelcius==''){
+
+                document.getElementById("celcius").value = null;
+                document.getElementById("fahrenheit").value = null;  
+
+            }else{
+                  
+                document.getElementById("fahrenheit").value = resultado;
+            }
+
+        }
+
+    </script>  
+
+</body>
+</html>
