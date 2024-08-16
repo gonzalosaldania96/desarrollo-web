@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+
+.hola{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 30px;
+    color: orange;
+    height: 500px;
+    width: 100%;
+    background-color: coral;
+    
+}
+
+.contenedor{
+    position: relative;
+    width: 50%;
+    color: white;
+    background-color: dodgerblue;
+    border-radius: 20px;
+    padding: 20px 20px;
+    overflow: hidden;
+}
+
+.contenedor h1{
+    position: relative;
+    left: 700px;
+    transition: all ease .7s;
+}
+
+
+.contenedor .contenedor2{
+    position: absolute;
+    left: 0px;
+    top: 0;
+    width: 30%;
+    height: 30%;
+    background-color: red;
+    
+}
+
+.contenedor .contenedor2:hover{
+    height: 100%;
+    width: 100%;
+    transition: all ease .7s;
+}
